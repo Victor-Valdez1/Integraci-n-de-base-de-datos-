@@ -10,8 +10,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   cupertino_icons: ^1.0.8
+  http: ^0.13.6 # Solo una versión de `http`
+  crypto: ^3.0.0
+
 
 dev_dependencies:
   flutter_test:

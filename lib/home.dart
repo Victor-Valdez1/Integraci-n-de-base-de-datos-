@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'marvel_screen.dart'; // Importa la pantalla de Marvel
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/movie.jpg'), // Ruta de la imagen
+                image: AssetImage('assets/images/movie.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -45,11 +46,10 @@ class HomeScreen extends StatelessWidget {
                     fontStyle: FontStyle.italic,
                   ),
                 ),
-                SizedBox(height: 40), // Espacio adicional
-                // Botón para continuar
+                SizedBox(height: 40),
+                // Botón para la pantalla de catálogo
                 ElevatedButton(
                   onPressed: () {
-                    // Lógica para ir a la página del catálogo
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => CatalogScreen()),
@@ -64,6 +64,24 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                 ),
+                SizedBox(height: 20),
+                // Botón para la pantalla de Marvel
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MarvelScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueAccent,
+                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  ),
+                  child: Text(
+                    'Explorar Marvel',
+                    style: TextStyle(fontSize: 18, color: Colors.white),
+                  ),
+                ),
               ],
             ),
           ),
@@ -73,7 +91,7 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-// Dummy screen para el catálogo (puedes cambiarlo luego)
+// Dummy screen para el catálogo
 class CatalogScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
